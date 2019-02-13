@@ -21,9 +21,9 @@ The "iris" dataset
 
 Follows are the first few rows of the **"iris"** dataset:
 
-```{r echo=FALSE, warnings=FALSE, comment=""}
+```{r echo=FALSE, warnings=FALSE, comment="", fig.height=80, fig.width=400 }
 data("iris")
-head(iris)
+knitr::kable(head(iris))
 ```
   
 The first four columns of the dataset are the predictor features while the column on the right "Species" is the value we are trying to predict with the Tree Model.
