@@ -1,6 +1,7 @@
 library(shiny)
 library(ggplot2); library(caret); library(rpart); library(rattle)
 library(plotly)
+library(e1071)
 data("iris")
 shinyServer(function(input, output) {
         
