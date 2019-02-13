@@ -5,7 +5,7 @@ shinyUI(fluidPage(
                 sidebarPanel(
                         h3(""),
                         h3("Instruction"),
-                        p("To predict the species of a flower, enter the dimensions using the sliders. Then click on the 'Submit' button."),
+                        p("To predict the species of a flower, enter the dimensions using the sliders. Then click on the 'Submit' button. The predicted flower species is the black dot on the plot."),
                         sliderInput("sepalLength", "Sepal Length?", min(iris$Sepal.Length), max(iris$Sepal.Length), value = mean(iris$Sepal.Length)),
                         sliderInput("sepalWidth" , "Sepal Width?" , min(iris$Sepal.Width), max(iris$Sepal.Width), value = mean(iris$Sepal.Width)),
                         sliderInput("petalLength", "Petal Length?", min(iris$Petal.Length), max(iris$Petal.Length), value = mean(iris$Petal.Length)),
@@ -18,7 +18,7 @@ shinyUI(fluidPage(
                         tabsetPanel(type = "tabs", 
                                     tabPanel("Data Plot", br(), 
                                              plotOutput("plot2"),
-                                             h4("Predicted Flower Species:"),textOutput("out2")
+                                             h5("Predicted Flower Species:"),h4(textOutput("out2"))
                                              
                                              ), 
                                     tabPanel("Tree Model", br(), 

@@ -4,9 +4,10 @@ library(plotly)
 data("iris")
 shinyServer(function(input, output) {
         
+        treeModel <- train(Species ~ .,method="rpart",data=iris)
         
         output$plot2 <- renderPlot({
-                treeModel <- train(Species ~ .,method="rpart",data=iris)
+                
                 new_data <- data.frame("Sepal.Length" = input$sepalLength, "Sepal.Width" = input$sepalWidth, "Petal.Length" = input$petalLength, "Petal.Width"= input$petalWidth) 
                 user_pred <- predict(treeModel,newdata=new_data)
                 output$out2 <- renderText(as.character(user_pred))
